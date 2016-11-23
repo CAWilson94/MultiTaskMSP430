@@ -27,6 +27,92 @@ __interrupt void Timer_A0(void){
      P1OUT ^= BIT7; // Toggle the LED
      counter++; 
 }
+
+void caseLED(void){
+  
+   switch(arr[opt]) {
+      case 1 :
+        P8OUT  |= BIT0; 
+        P5OUT  &= ~BIT1;
+        P5OUT  &= ~BIT2;
+        P5OUT  &= ~BIT3;
+        P2OUT  &= ~BIT7;
+        
+         break;
+         
+      case 2 :
+        P8OUT  &= ~BIT0; 
+        P5OUT |= BIT1;
+        P5OUT  &= ~BIT2;
+        P5OUT  &= ~BIT3;
+        P2OUT  &= ~BIT7; 
+         break;
+         
+      case 3 :
+        P8OUT  &= ~BIT0; 
+        P5OUT &= ~BIT1;
+        P5OUT  |= BIT2;
+        P5OUT  &= ~BIT3;
+        P2OUT  &= ~BIT7; 
+         
+         break;
+         
+      case 4 :
+        P8OUT  &= ~BIT0; 
+        P5OUT &= ~BIT1;
+        P5OUT  &= ~BIT2;
+        P5OUT  |= BIT3;
+        P2OUT  &= ~BIT7; 
+         
+         break;
+         
+      case 5 :
+        P8OUT  &= ~BIT0; 
+        P5OUT |= BIT1;
+        P5OUT  |= BIT2;
+        P5OUT  |= BIT3;
+        P2OUT  |= BIT7;
+        
+         break;
+         
+      case 6 :
+        P8OUT  |= BIT0; 
+        P5OUT &= ~BIT1;
+        P5OUT  |= BIT2;
+        P5OUT  |= BIT3;
+        P2OUT  |= BIT7;
+         
+         break;
+         
+      case 7 :
+        P8OUT  |= BIT0; 
+        P5OUT  |= BIT1;
+        P5OUT  &= ~BIT2;
+        P5OUT  |= BIT3;
+        P2OUT  |= BIT7;
+        
+         break;
+         
+      case 8 :
+        P8OUT  |= BIT0; 
+        P5OUT  |= BIT1;
+        P5OUT  |= BIT2;
+        P5OUT  &= ~BIT3;
+        P2OUT  |= BIT7;
+       
+         break;
+         
+      default :
+        P8OUT  |= BIT0; 
+        P5OUT  |= BIT1;
+        P5OUT  |= BIT2;
+        P5OUT  &= ~BIT3;
+        P2OUT  |= BIT7;
+        break;
+        
+   }
+  
+}
  
 void main(void)
 {
