@@ -4,6 +4,7 @@
 
 int flag = 0;
 int counter = 0;
+unsigned int arr[8] = {1,2,3,4,8,7,6,5};
 
 #pragma vector=PORT1_VECTOR
 __interrupt void toggle(void)
@@ -38,7 +39,7 @@ void caseLED(void){
         P5OUT  &= ~BIT3;
         P2OUT  &= ~BIT7;
         
-         break;
+        break;
          
       case 2 :
         P8OUT  &= ~BIT0; 
